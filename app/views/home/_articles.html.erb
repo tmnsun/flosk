@@ -1,0 +1,33 @@
+<h2>Статьи</h2>
+<% unless @articles.nil? %>
+	<div class="row">
+		<div class="span6"><img src="http://placehold.it/500x170"/></div>
+	</div>
+	<div class="row">
+		<div class="span6"><h4><%= @articles.first.title %></h4></div>
+	</div>
+	<div class="row">
+		<div class="span6">
+			<%=raw @articles.first.announce %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="span6"><%= link_to "продолжить чтение" %></div>
+	</div>
+
+	<div class="row" style="margin-top: 20px;">
+		<div class="span6">
+			<%if @articles.count > 1 %>
+				<ul>
+					<% @articles[1..-1].each do |article| %>
+						<li><h5><%= link_to article.title %></h5></li>
+					<% end %>
+				</ul>
+			<% end %>
+		</div>		
+	</div>
+<% else %>
+	статей нет
+<% end %>
+
+

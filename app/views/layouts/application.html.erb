@@ -10,12 +10,30 @@
     <%= yield(:head) %>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
+    <div class="container">
+      <div class="row">
+        <div class="span3">
+          <%= link_to image_tag("http://placehold.it/250x100"), root_path, :class => 'brand' %>
         </div>
-      </nav>
+        <div class="span6">
+          <div class="row-fluid">
+            <%= render 'layouts/navigation' %>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <form id="custom-search-form" class="form-search form-horizontal">
+                <div class="input-append span12">
+                  <input type="text" class="search-query" placeholder="Search" style="width: 90%;">
+                  <button type="submit" class="btn"><i class="icon-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="span3">
+          <%= render 'layouts/usermenu' %>
+        </div>
+      </div>
     </div>
     <div id="main" role="main">
       <div class="container">
