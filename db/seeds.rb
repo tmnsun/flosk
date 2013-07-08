@@ -17,3 +17,9 @@ user = User.find_or_create_by_email :name => ENV['ADMIN_NAME'].dup, :email => EN
 puts 'user: ' << user.name
 user.confirm!
 user.add_role :admin
+
+puts 'NEWS CATEGORIES'
+NewsCategory.find_or_create_by_name_and_label(:name => "salon", :label => "В салонах красоты")
+NewsCategory.find_or_create_by_name_and_label(:name => "tyumen", :label => "В Тюмени")
+NewsCategory.find_or_create_by_name_and_label(:name => "world", :label => "В мире")
+puts 'NEWS CATEGORIES DONE'
