@@ -1,43 +1,4 @@
-<div class="well">
-	<div id="myCarousel" class="carousel slide">
-    	<ol class="carousel-indicators">
-    		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    		<li data-target="#myCarousel" data-slide-to="1"></li>
-    	</ol>
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-    	<div class="item active">
-    		<div class="row-fluid">
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    </div><!--/row-fluid-->
-    </div><!--/item-->
-    <div class="item">
-    <div class="row-fluid">
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    <div class="span2"><a href="#x" class="thumbnail"><img src="http://placehold.it/100x100" alt="Image" style="max-width:100%;" /></a></div>
-    </div><!--/row-fluid-->
-    </div><!--/item-->
-    </div><!--/carousel-inner-->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-    </div><!--/myCarousel-->
-</div><!--/well-->
-<script type="text/javascript">
-    $(document).ready(function() {
-	    $('#myCarousel').carousel({
-    		interval: 10000
-    	})
-    });
-</script>
+<%= render :partial => "home/carousel" %>
 
 <div class="row">
 	<div class="span6">
@@ -65,27 +26,10 @@
 				<img src="http://placehold.it/470x360"/>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" style="margin-top: 50px;">
 			<div class="span12">
-				<h2>Статистика</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span12">
-				<script type="text/javascript">(function() {
-          if (window.pluso)if (typeof window.pluso.start == "function") return;
-          var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
-          s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
-          s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
-          var h=d[g]('head')[0] || d[g]('body')[0];
-          h.appendChild(s);
-          })();</script>
-        <div data-user="1281580798" class="pluso" data-options="big,round,line,horizontal,nocounter,theme=04" data-services="vkontakte,odnoklassniki,facebook,twitter,google,print" data-background="#ebebeb"></div>
+				<%= render :partial => "home/social" %>
 			</div>
 		</div>
 	</div>
 </div>
-
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
